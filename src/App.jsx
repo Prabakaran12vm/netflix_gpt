@@ -1,14 +1,17 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
+import  Body  from "./components/Body";
+import Header from "./components/Header";
+
 
 function App() {
   return (
-    
-      <div className="bg-black">
-        <h1 className="text-3xl">Hello</h1>
-      </div>
-    
-  );
+  <>
+  <Header/>
+  <Body />
+  
+  </>)
+  
 }
 
 export default App;
