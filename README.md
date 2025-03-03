@@ -1,7 +1,7 @@
 # Netflix GPT
 - Create React App
 - Configured Tailwind
-- 
+- Header 
 
 
 # Features
