@@ -18,4 +18,5 @@
             - Verticle Scroll
 - NetflixGPT
     - Search Bar
-    - Movie Suggestions        
+    - Movie Suggestions 
+    - 
