@@ -1,10 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import Header from './Header'
+import checkValidData from '../utils/vaidate'
+
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
 
+  const handleButtonClick = ()=>{
+    checkValidData
+
+  }
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
@@ -39,7 +45,7 @@ const Login = () => {
           placeholder="Password"
           className="p-4 m-2 my-4 w-full  h-[40px] bg-gray-700 "
         />
-        <button className=" m-4 ml-2 w-full text-white bg-red-700 h-[40px] rounded-lg">
+        <button onClick={handleButtonClick} className=" m-4 ml-2 w-full text-white bg-red-700 h-[40px] rounded-lg">
           {!isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-4" onClick={toggleSignInForm}>
