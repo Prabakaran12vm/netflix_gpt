@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import Header from './Header'
-import checkValidData from '../utils/vaidate'
+import {checkValidData} from '../utils/vaidate'
 
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const email =useRef(null)
+  const password = useRef(null)
 
   const handleButtonClick = ()=>{
     checkValidData
@@ -31,6 +33,7 @@ const Login = () => {
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         <input
+          ref ={email}
           type="text"
           placeholder="Email Address"
           className="p-4 my-4 w-full bg-gray-700 m-2 h-[40px] "
@@ -41,6 +44,7 @@ const Login = () => {
           className="p-4 my-4 w-full bg-gray-700 m-2 h-[40px] "
         />}
         <input
+          ref ={password}
           type="password"
           placeholder="Password"
           className="p-4 m-2 my-4 w-full  h-[40px] bg-gray-700 "
