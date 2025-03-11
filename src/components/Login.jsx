@@ -10,12 +10,17 @@ const Login = () => {
   const password = useRef(null)
 
   const handleButtonClick = ()=>{
-    checkValidData
+    // checkValidData
+    console.log(email.current.value)
+    console.log(password.current.value)
+
 
   }
   const toggleSignInForm = () => {
-    setIsSignInForm(!isSignInForm);
-  };
+    setIsSignInForm(!isSignInForm)
+
+
+  }
 
   return (
     <div>
@@ -28,7 +33,7 @@ const Login = () => {
         />
       </div>
       {/* Login form */}
-      <form className="w-3/12 absolute rounded-lg p-12  my-36  mx-auto right-0 left-0 text-white bg-black/70  ">
+      <form onSubmit={(e)=>e.preventDefault()} className="w-3/12 absolute rounded-lg p-12  my-36  mx-auto right-0 left-0 text-white bg-black/70  ">
         <h1 className="font-bold  text-3xl py-4 ">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
