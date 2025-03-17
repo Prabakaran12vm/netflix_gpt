@@ -6,7 +6,8 @@
 - Login Form
 - Sign Up form
 - Form Validation
-- useRef Hook 
+- useRef Hook
+- Firebase setup 
 
 
 # Features

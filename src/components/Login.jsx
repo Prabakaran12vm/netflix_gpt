@@ -6,15 +6,18 @@ import {checkValidData} from '../utils/vaidate'
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  
+  
+  const [errorMessage, setErrorMessage] = useState(null)
   const email =useRef(null)
   const password = useRef(null)
+  const name = useRef(null)
 
   const handleButtonClick = ()=>{
     // checkValidData
-    console.log(email.current.value)
-    console.log(password.current.value)
-
-
+    const message = checkValidData(email.current.value,password.current.value)
+    setErrorMessage(message)
+    // Sign in / Sign up
   }
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm)
@@ -44,6 +47,7 @@ const Login = () => {
           className="p-4 my-4 w-full bg-gray-700 m-2 h-[40px] "
         />
         {!isSignInForm && <input
+          ref={name}
           type="text"
           placeholder="Full Name"
           className="p-4 my-4 w-full bg-gray-700 m-2 h-[40px] "
@@ -54,6 +58,7 @@ const Login = () => {
           placeholder="Password"
           className="p-4 m-2 my-4 w-full  h-[40px] bg-gray-700 "
         />
+        <p className="text-red-500 text-sm pl-2 ">{errorMessage}</p>
         <button onClick={handleButtonClick} className=" m-4 ml-2 w-full text-white bg-red-700 h-[40px] rounded-lg">
           {!isSignInForm ? "Sign In" : "Sign Up"}
         </button>
