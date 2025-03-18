@@ -17,7 +17,11 @@ const Login = () => {
     // checkValidData
     const message = checkValidData(email.current.value,password.current.value)
     setErrorMessage(message)
-    // Sign in / Sign up
+    
+    if(message) return;
+      
+
+
   }
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm)
